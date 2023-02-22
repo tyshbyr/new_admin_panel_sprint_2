@@ -129,5 +129,8 @@ LOGGING = {
 if DEBUG:
     INSTALLED_APPS.append('debug_toolbar')
     INSTALLED_APPS.append('django_extensions')
+    INSTALLED_APPS.append('corsheaders')
     MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+    MIDDLEWARE.insert(3, 'corsheaders.middleware.CorsMiddleware')
     INTERNAL_IPS = ['127.0.0.1']
+    CORS_ALLOWED_ORIGINS = ["http://127.0.0.1:8080",]
