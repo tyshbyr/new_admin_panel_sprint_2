@@ -20,4 +20,4 @@ COPY . .
 
 EXPOSE 8000
 
-ENTRYPOINT ["uwsgi", "--strict", "--ini", "uwsgi.ini"]
+ENTRYPOINT ["sh", "-c","python manage.py makemigrations && python manage.py migrate && python manage.py collectstatic --noinput && uwsgi --strict --ini uwsgi.ini"]
