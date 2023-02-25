@@ -5,7 +5,7 @@ services:
     env_file:
       - .envs/.env.local
     volumes:
-      - /home/tyshbyr/postgresql/data:/var/lib/postgresql/data
+      - db_volume:/var/lib/postgresql/data
 
   django:
     env_file:
@@ -31,5 +31,6 @@ services:
     ports:
       - "80:80"
 volumes:
+  db_volume:
   static_volume:
   media_volume:
